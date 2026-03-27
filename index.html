@@ -79,7 +79,7 @@ h2.stitle{font-family:'Fraunces',serif;font-size:clamp(2rem,3.5vw,3rem);font-sty
 .ssub{font-size:.95rem;color:var(--muted);line-height:1.75;max-width:520px;margin-bottom:3.5rem;}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
+.rv{opacity:1;transform:translateY(0);}
 .rv.in{opacity:1;transform:translateY(0);}
 
 /* about */
@@ -164,7 +164,7 @@ hr.div{border:none;border-top:1px solid var(--line);margin:0;}
 
 /* experience */
 .exp-list{display:flex;flex-direction:column;}
-.erow{display:grid;grid-template-columns:190px 1fr;gap:3.5rem;padding:2.8rem 0;border-top:1px solid var(--line);opacity:0;transform:translateY(14px);transition:all .5s;}
+.erow{display:grid;grid-template-columns:190px 1fr;gap:3.5rem;padding:2.8rem 0;border-top:1px solid var(--line);opacity:1;transform:translateY(0);}
 .erow.in{opacity:1;transform:translateY(0);}
 .edate{font-family:'JetBrains Mono',monospace;font-size:.69rem;color:var(--teal);letter-spacing:.05em;margin-bottom:.5rem;}
 .eco{font-size:.83rem;font-weight:600;color:var(--muted);}
@@ -331,7 +331,7 @@ footer{padding:1.8rem 5rem;display:flex;justify-content:space-between;align-item
     </div>
     <div class="photo-wrap rv">
       <div class="photo-frame">
-        <img src="Archana_image_jpg.jpeg" alt="Archana Kanchimireddy — ASU Graduate"/>
+        <img src="Archana_image_jpg.jpeg" onerror="this.onerror=null;this.src='Archana_image_jpg.jpg'" alt="Archana Kanchimireddy — ASU Graduate"/>
       </div>
       <div class="photo-caption">
         <div class="cap-name">Archana Kanchimireddy</div>
@@ -399,10 +399,7 @@ footer{padding:1.8rem 5rem;display:flex;justify-content:space-between;align-item
 
   <!-- GitHub repos — dynamically loaded -->
   <div id="repo-container">
-    <div class="repo-loading">
-      <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
-      <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
-    </div>
+    <div></div>
   </div>
 
   <div class="gh-note rv">
@@ -564,13 +561,9 @@ footer{padding:1.8rem 5rem;display:flex;justify-content:space-between;align-item
 // ── sticky nav
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('stuck',scrollY>60));
 
-// ── scroll reveals
-const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.1});
-document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+// scroll reveals disabled for instant load
 
-// ── experience rows
-const eo=new IntersectionObserver(es=>{es.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),i*110);});},{threshold:.1});
-document.querySelectorAll('.erow').forEach(el=>eo.observe(el));
+// experience rows disabled
 
 // ── mock chart bars
 const bars=[50,68,42,85,61,90,74];
