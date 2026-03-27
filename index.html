@@ -15,11 +15,11 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Epilogue',sans-serif;overflow-x:hidden;line-height:1.65;cursor:none;}
+body{background:var(--bg);color:var(--text);font-family:'Epilogue',sans-serif;overflow-x:hidden;line-height:1.65;}
 
 /* cursor */
-#dot{position:fixed;width:8px;height:8px;background:var(--orange);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s;}
-#ring{position:fixed;width:30px;height:30px;border:1px solid rgba(255,107,53,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);}
+
+
 
 /* nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 5rem;transition:all .3s;}
@@ -265,7 +265,7 @@ footer{padding:1.8rem 5rem;display:flex;justify-content:space-between;align-item
 </head>
 <body>
 
-<div id="dot"></div><div id="ring"></div>
+
 
 <nav id="nav">
   <div class="logo">Archana <b>K.</b></div>
@@ -559,15 +559,7 @@ footer{padding:1.8rem 5rem;display:flex;justify-content:space-between;align-item
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ── cursor
-const dot=document.getElementById('dot'),ring=document.getElementById('ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
-(function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
-document.querySelectorAll('a,button').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{dot.style.width='18px';dot.style.height='18px';ring.style.width='48px';ring.style.height='48px';});
-  el.addEventListener('mouseleave',()=>{dot.style.width='8px';dot.style.height='8px';ring.style.width='30px';ring.style.height='30px';});
-});
+// cursor removed for usability
 
 // ── sticky nav
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('stuck',scrollY>60));
