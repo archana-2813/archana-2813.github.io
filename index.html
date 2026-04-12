@@ -3,549 +3,483 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Archana Kanchimireddy — Software Engineer. React.js, Node.js, Full-Stack, AWS. 2.5+ yrs experience. MS ASU 4.0 GPA. Available for hire."/>
-<meta name="keywords" content="Software Engineer, Frontend Developer, Full Stack Developer, React.js, Node.js, TypeScript, AWS, JavaScript, Arizona, Tempe, ASU, TCS, Healthcare, Fintech"/>
+<meta name="description" content="Archana Kanchimireddy — Software Engineer based in Tempe, AZ. I build web apps with React and Node.js. Open to full-time roles."/>
 <title>Archana Kanchimireddy — Software Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
-:root{
-  --bg:#f8f9fa;--bg2:#ffffff;--surface:#ffffff;--surface2:#f1f3f5;
-  --line:rgba(0,0,0,0.08);--text:#1a1a2e;--muted:#666;--dim:#999;
-  --orange:#c8401a;--orange2:#e05c2a;--teal:#0a7c5c;--blue:#1a4fa0;
-}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;line-height:1.65;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#ffffff;color:#1a1a1a;line-height:1.65;font-size:16px;}
 
-/* cursor */
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:1px solid #f0f0f0;padding:1rem 5rem;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-size:1.1rem;font-weight:700;color:#1a1a1a;text-decoration:none;}
+.nav-logo span{color:#c8401a;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:#666;text-decoration:none;font-size:.85rem;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:#c8401a;}
+.nav-btn{background:#1a1a1a;color:#fff;padding:.55rem 1.3rem;border-radius:6px;font-size:.82rem;font-weight:600;text-decoration:none;transition:background .2s;}
+.nav-btn:hover{background:#c8401a;}
 
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:8rem 5rem 5rem;border-bottom:1px solid #f0f0f0;}
+.hero-inner{max-width:680px;}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:#fff5f2;border:1px solid #ffd4c8;border-radius:4px;padding:.35rem .9rem;font-size:.75rem;font-weight:600;color:#c8401a;letter-spacing:.05em;margin-bottom:2rem;}
+.hero-tag::before{content:'';width:7px;height:7px;background:#c8401a;border-radius:50%;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.hero h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:#1a1a1a;margin-bottom:1.5rem;}
 
+.hero-sub{font-size:1.05rem;color:#555;line-height:1.8;margin-bottom:2.5rem;max-width:540px;}
+.hero-sub strong{color:#1a1a1a;font-weight:600;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem;}
+.btn-main{background:#c8401a;color:#fff;padding:.85rem 2rem;border-radius:7px;font-size:.88rem;font-weight:700;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem;}
+.btn-main:hover{background:#a83515;transform:translateY(-2px);}
+.btn-out{background:#fff;color:#1a1a1a;border:1.5px solid #e0e0e0;padding:.85rem 2rem;border-radius:7px;font-size:.88rem;font-weight:600;text-decoration:none;transition:all .2s;}
+.btn-out:hover{border-color:#1a1a1a;transform:translateY(-2px);}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:2.5rem;border-top:1px solid #f0f0f0;}
+.stat-num{font-size:1.9rem;font-weight:800;color:#1a1a1a;line-height:1;}
+.stat-num span{color:#c8401a;}
+.stat-label{font-size:.75rem;color:#888;margin-top:.2rem;font-weight:500;}
 
-/* nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 5rem;transition:all .3s;}
-nav.stuck{background:rgba(248,249,250,.97);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);}
-.logo{font-family:'Plus Jakarta Sans',sans-serif;font-style:italic;font-size:1.1rem;color:#1a1a2e;}
-.logo b{color:var(--orange);font-weight:400;}
-.nl{display:flex;gap:2.2rem;list-style:none;}
-.nl a{color:var(--muted);text-decoration:none;font-size:.76rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;}
-.nl a:hover{color:#fff;}
-.nhire{background:var(--orange);color:#fff;padding:.55rem 1.3rem;border-radius:6px;font-size:.76rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;transition:all .2s;}
-.nhire:hover{background:var(--orange2);}
+/* SECTIONS */
+section{padding:6rem 5rem;max-width:1100px;margin:0 auto;}
+.sec-tag{font-size:.72rem;font-weight:700;color:#c8401a;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem;}
+h2{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:#1a1a1a;margin-bottom:1rem;letter-spacing:-.02em;line-height:1.15;}
+.sec-intro{font-size:1rem;color:#666;line-height:1.75;max-width:560px;margin-bottom:3rem;}
+hr.div{border:none;border-top:1px solid #f0f0f0;margin:0;}
 
-/* hero */
-.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 1fr;position:relative;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(200,64,26,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(200,64,26,.04) 1px,transparent 1px);background-size:70px 70px;}
-.hero-glow{position:absolute;top:25%;left:35%;width:600px;height:600px;background:radial-gradient(circle,rgba(200,64,26,.06) 0%,transparent 65%);pointer-events:none;}
-.hl{display:flex;flex-direction:column;justify-content:center;padding:10rem 4rem 5rem;position:relative;z-index:1;}
-.hr{display:flex;flex-direction:column;justify-content:center;padding:10rem 4rem 5rem 2rem;position:relative;z-index:1;}
-.badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,201,167,.09);border:1px solid rgba(0,201,167,.22);border-radius:4px;padding:.35rem .9rem;font-size:.7rem;font-weight:600;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;margin-bottom:2rem;}
-.badge::before{content:'';width:6px;height:6px;background:var(--teal);border-radius:50%;animation:blink 2s infinite;}
-@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,201,167,.4);}50%{opacity:.5;box-shadow:0 0 0 5px rgba(0,201,167,0);}}
-.pre{font-family:'Plus Jakarta Sans',sans-serif;font-size:.72rem;color:var(--orange);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.2rem;opacity:0;animation:up .7s .1s ease forwards;}
-h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(3rem,6vw,5.8rem);line-height:.93;letter-spacing:-.04em;color:#1a1a2e;font-weight:800;margin-bottom:1.6rem;opacity:0;animation:up .7s .2s ease forwards;}
-h1 em{font-style:normal;color:#1a1a2e;font-weight:800;}
-h1 small{display:block;font-size:.38em;color:#999;margin-top:.4rem;font-weight:500;letter-spacing:.02em;}
-.hdesc{font-size:1rem;color:var(--muted);line-height:1.8;max-width:440px;margin-bottom:2.5rem;opacity:0;animation:up .7s .3s ease forwards;}
-.hdesc strong{color:var(--text);}
-.hbtns{display:flex;gap:.9rem;flex-wrap:wrap;opacity:0;animation:up .7s .4s ease forwards;}
-.bp{background:var(--orange);color:#fff;padding:.85rem 1.9rem;border-radius:7px;font-size:.85rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.45rem;transition:all .25s;}
-.bp:hover{background:var(--orange2);transform:translateY(-2px);box-shadow:0 14px 36px rgba(255,107,53,.3);}
-.bs{background:transparent;color:var(--text);border:1px solid var(--line);padding:.85rem 1.9rem;border-radius:7px;font-size:.85rem;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:.45rem;transition:all .25s;}
-.bs:hover{border-color:rgba(255,255,255,.25);transform:translateY(-2px);}
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 280px;gap:5rem;align-items:start;}
+.about-photo{display:flex;flex-direction:column;align-items:center;gap:1.2rem;}
+.photo-circle{width:220px;height:220px;border-radius:50%;overflow:hidden;border:3px solid #ffd4c8;box-shadow:0 8px 30px rgba(200,64,26,.1);}
+.photo-circle img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.photo-name{font-size:1rem;font-weight:700;color:#1a1a1a;text-align:center;}
+.photo-title{font-size:.8rem;color:#888;text-align:center;margin-top:.2rem;}
+.about-text p{font-size:.97rem;color:#444;line-height:1.85;margin-bottom:1.2rem;}
+.about-text p strong{color:#1a1a1a;font-weight:600;}
+.about-pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem;}
+.pill{background:#f8f8f8;border:1px solid #ebebeb;color:#555;padding:.3rem .85rem;border-radius:100px;font-size:.8rem;font-weight:500;}
 
-/* stat cards */
-.scards{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;opacity:0;animation:up .7s .5s ease forwards;}
-.sc{background:#ffffff;border:1px solid rgba(0,0,0,0.1);border-radius:12px;padding:1.3rem 1.5rem;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
-.sc:hover{border-color:rgba(255,107,53,.25);transform:translateX(-3px);}
-.scn{font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-style:normal;color:#1a1a2e;line-height:1;}
-.scn span{color:var(--orange);}
-.scl{font-size:.7rem;color:var(--muted);font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:.04em;margin-top:.3rem;}
-.scs{font-size:.68rem;color:var(--dim);margin-top:.15rem;}
+/* STATS BAR */
+.stats-bar{background:#1a1a1a;padding:3.5rem 5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.sbar-item{padding:0 2.5rem;border-right:1px solid rgba(255,255,255,.08);text-align:center;}
+.sbar-item:first-child{padding-left:0;text-align:left;}
+.sbar-item:last-child{border-right:none;}
+.sbar-num{font-size:2.2rem;font-weight:800;color:#fff;line-height:1;margin-bottom:.4rem;}
+.sbar-num span{color:#ff8f5e;}
+.sbar-label{font-size:.75rem;color:rgba(255,255,255,.45);font-weight:500;line-height:1.4;}
 
-@keyframes up{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+/* EXPERIENCE */
+.exp-list{display:flex;flex-direction:column;}
+.exp-item{padding:2.5rem 0;border-top:1px solid #f0f0f0;display:grid;grid-template-columns:200px 1fr;gap:3rem;}
+.exp-date{font-size:.75rem;color:#c8401a;font-weight:600;letter-spacing:.04em;margin-bottom:.5rem;}
+.exp-company{font-size:.88rem;font-weight:700;color:#1a1a1a;margin-bottom:.3rem;}
+.exp-type{display:inline-block;background:#f5f5f5;border:1px solid #e8e8e8;color:#888;padding:.18rem .6rem;border-radius:3px;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-top:.5rem;}
+.exp-role{font-size:1.2rem;font-weight:700;color:#1a1a1a;margin-bottom:1rem;letter-spacing:-.01em;}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.exp-bullets li{font-size:.9rem;color:#555;line-height:1.7;padding-left:1.2rem;position:relative;}
+.exp-bullets li::before{content:'→';position:absolute;left:0;color:#c8401a;font-size:.8rem;top:.05rem;}
+.exp-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem;}
+.exp-tag{background:#fff5f2;border:1px solid #ffd4c8;color:#c8401a;padding:.2rem .65rem;border-radius:3px;font-size:.72rem;font-weight:600;}
 
-/* marquee */
-.mq{overflow:hidden;background:#1a1a2e;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:.85rem 0;}
-.mqi{display:flex;gap:2.5rem;animation:scroll 26s linear infinite;white-space:nowrap;}
-.mqi span{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);}
-.mqi .dot{color:#ff8f5e;}
+/* PROJECTS */
+.featured-card{background:#1a1a1a;border-radius:16px;padding:3rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;overflow:hidden;}
+.featured-card::before{content:'Featured';position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,143,94,.12);border:1px solid rgba(255,143,94,.25);color:#ff8f5e;font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.25rem .7rem;border-radius:3px;}
+.fc-label{font-size:.72rem;color:#ff8f5e;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.8rem;}
+.fc-title{font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.8rem;letter-spacing:-.02em;line-height:1.2;}
+.fc-desc{font-size:.9rem;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:1.2rem;}
+.fc-points{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.5rem;}
+.fc-points li{font-size:.85rem;color:rgba(255,255,255,.65);padding-left:1.2rem;position:relative;line-height:1.6;}
+.fc-points li::before{content:'✓';position:absolute;left:0;color:#00c9a7;font-weight:700;}
+.fc-techs{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem;}
+.fc-tech{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.65);padding:.22rem .7rem;border-radius:3px;font-size:.72rem;}
+.fc-btns{display:flex;gap:.7rem;}
+.fc-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.2rem;border-radius:6px;font-size:.8rem;font-weight:600;text-decoration:none;transition:all .2s;}
+.fc-btn.primary{background:#c8401a;color:#fff;}
+.fc-btn.primary:hover{background:#a83515;}
+.fc-btn.ghost{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#fff;}
+.fc-btn.ghost:hover{background:rgba(255,255,255,.12);}
+.fc-visual{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:1.5rem;height:250px;display:flex;flex-direction:column;gap:.8rem;position:relative;overflow:hidden;}
+.fc-visual::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#c8401a,#ff8f5e);}
+.fv-dots{display:flex;gap:.35rem;}
+.fv-dot{width:9px;height:9px;border-radius:50%;}
+.fv-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:.3rem;}
+.fv-stat{background:rgba(255,255,255,.05);border-radius:6px;padding:.6rem;text-align:center;}
+.fv-stat-n{font-size:1rem;font-weight:800;color:#ff8f5e;line-height:1;}
+.fv-stat-l{font-size:.6rem;color:rgba(255,255,255,.35);margin-top:.2rem;}
+.fv-bars{display:flex;align-items:flex-end;gap:.3rem;height:55px;margin-top:.3rem;}
+.fv-bar{background:linear-gradient(to top,#c8401a,rgba(200,64,26,.3));border-radius:2px 2px 0 0;flex:1;transition:height .5s ease;}
+.fv-status{font-size:.62rem;color:#00c9a7;margin-top:.3rem;}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.pcard{background:#fafafa;border:1.5px solid #f0f0f0;border-radius:12px;padding:1.8rem;transition:all .25s;display:flex;flex-direction:column;}
+.pcard:hover{border-color:#ffd4c8;background:#fff;box-shadow:0 8px 24px rgba(200,64,26,.07);transform:translateY(-3px);}
+.pcard-num{font-size:.7rem;color:#bbb;font-weight:600;letter-spacing:.08em;margin-bottom:1rem;}
+.pcard-name{font-size:1rem;font-weight:700;color:#1a1a1a;margin-bottom:.6rem;line-height:1.3;}
+.pcard-desc{font-size:.83rem;color:#666;line-height:1.65;flex:1;margin-bottom:1.2rem;}
+.pcard-metric{display:inline-flex;background:#f0faf6;border:1px solid #b8e4cc;color:#1a7a4a;padding:.22rem .7rem;border-radius:3px;font-size:.72rem;font-weight:700;margin-bottom:1rem;}
+.pcard-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:auto;}
+.pcard-lang{font-size:.72rem;color:#aaa;font-weight:500;}
+.pcard-link{font-size:.78rem;font-weight:700;color:#c8401a;text-decoration:none;opacity:0;transition:opacity .2s;}
+.pcard:hover .pcard-link{opacity:1;}
+
+/* SKILLS */
+.skills-wrap{display:grid;grid-template-columns:220px 1fr;gap:4rem;align-items:start;}
+.skills-intro{font-size:.95rem;color:#666;line-height:1.8;}
+.skills-intro strong{color:#1a1a1a;}
+.skill-rows{display:flex;flex-direction:column;gap:.9rem;}
+.skill-row{display:grid;grid-template-columns:130px 1fr;gap:1.5rem;padding-top:.9rem;border-top:1px solid #f0f0f0;align-items:start;}
+.skill-cat{font-size:.75rem;font-weight:700;color:#1a1a1a;letter-spacing:.04em;padding-top:.3rem;}
+.skill-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
+.stag{background:#f5f5f5;border:1px solid #ebebeb;color:#444;padding:.25rem .7rem;border-radius:4px;font-size:.77rem;font-weight:500;transition:all .2s;}
+.stag:hover{background:#fff5f2;border-color:#ffd4c8;color:#c8401a;}
+.stag.key{background:#fff5f2;border-color:#ffd4c8;color:#c8401a;font-weight:600;}
+
+/* EDUCATION */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:3rem;}
+.edu-card{background:#fafafa;border:1.5px solid #f0f0f0;border-radius:12px;padding:2rem;transition:all .25s;}
+.edu-card:hover{border-color:#ffd4c8;transform:translateY(-3px);}
+.edu-icon{font-size:1.8rem;margin-bottom:.9rem;}
+.edu-deg{font-size:1rem;font-weight:700;color:#1a1a1a;margin-bottom:.3rem;line-height:1.35;}
+.edu-school{font-size:.85rem;color:#888;margin-bottom:.9rem;}
+.edu-chips{display:flex;gap:.5rem;flex-wrap:wrap;}
+.edu-chip{background:#f5f5f5;border:1px solid #ebebeb;color:#555;padding:.2rem .65rem;border-radius:3px;font-size:.72rem;font-weight:600;}
+.edu-chip.hot{background:#fff5f2;border-color:#ffd4c8;color:#c8401a;}
+.certs-title{font-size:.72rem;font-weight:700;color:#c8401a;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.2rem;}
+.cert-list{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
+.cert-item{display:flex;align-items:flex-start;gap:.75rem;background:#fafafa;border:1.5px solid #f0f0f0;border-radius:8px;padding:1rem 1.1rem;transition:all .2s;}
+.cert-item:hover{border-color:#ffd4c8;}
+.cert-dot{width:6px;height:6px;background:#c8401a;border-radius:50%;flex-shrink:0;margin-top:.45rem;}
+.cert-name{font-size:.82rem;font-weight:600;color:#1a1a1a;line-height:1.4;}
+.cert-by{font-size:.7rem;color:#aaa;margin-top:.15rem;}
+
+/* CONTACT */
+.contact-wrap{background:#1a1a1a;border-radius:20px;padding:4rem;display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center;}
+.contact-tag{font-size:.72rem;font-weight:700;color:#ff8f5e;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;}
+.contact-h{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.15;margin-bottom:1rem;}
+.contact-p{font-size:.93rem;color:rgba(255,255,255,.5);line-height:1.75;margin-bottom:2rem;}
+.contact-email{font-size:1.1rem;font-weight:700;color:#ff8f5e;text-decoration:none;display:block;margin-bottom:2rem;transition:color .2s;}
+.contact-email:hover{color:#fff;}
+.contact-btns{display:flex;gap:.7rem;flex-wrap:wrap;}
+.cbtn{display:inline-flex;align-items:center;gap:.45rem;padding:.75rem 1.4rem;border-radius:7px;font-size:.82rem;font-weight:600;text-decoration:none;transition:all .2s;}
+.cbtn.main{background:#c8401a;color:#fff;}
+.cbtn.main:hover{background:#a83515;}
+.cbtn.ghost{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#fff;}
+.cbtn.ghost:hover{background:rgba(255,255,255,.12);}
+.contact-facts{display:flex;flex-direction:column;gap:.8rem;}
+.cfact{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:1.1rem 1.3rem;display:flex;align-items:flex-start;gap:.9rem;}
+.cfact-ic{font-size:1.1rem;flex-shrink:0;}
+.cfact-t{font-size:.87rem;font-weight:700;color:#fff;margin-bottom:.15rem;}
+.cfact-b{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.5;}
+
+/* MARQUEE */
+.marquee{overflow:hidden;background:#1a1a1a;padding:.85rem 0;}
+.marquee-inner{display:flex;gap:2.5rem;animation:scroll 28s linear infinite;white-space:nowrap;}
+.marquee-inner span{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+.marquee-inner .dot{color:#ff8f5e;}
 @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-/* sections */
-.wrap{max-width:1140px;margin:0 auto;padding:7rem 5rem;}
-.slabel{font-family:'Plus Jakarta Sans',sans-serif;font-size:.68rem;color:var(--orange);letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:.7rem;}
-.slabel::before{content:'';width:22px;height:1px;background:var(--orange);}
-h2.stitle{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2rem,3.5vw,3rem);font-style:normal;letter-spacing:-.025em;color:#1a1a2e;margin-bottom:.8rem;line-height:1.1;}
-.ssub{font-size:.95rem;color:var(--muted);line-height:1.75;max-width:520px;margin-bottom:3.5rem;}
-
-/* reveal */
-.rv{opacity:1;transform:translateY(0);}
-.rv.in{opacity:1;transform:translateY(0);}
-
-/* about */
-.about-grid{display:grid;grid-template-columns:1.2fr 220px 1fr;gap:3.5rem;align-items:start;}
-.story{color:#444;line-height:1.9;font-size:1rem;}
-.story p{margin-bottom:1.3rem;}
-.story strong{color:#1a1a2e;}.story em{color:var(--orange);font-style:normal;}
-.facts{display:flex;flex-direction:column;gap:1rem;}
-.fact{background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:1.3rem 1.5rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color .2s;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
-.fact:hover{border-color:rgba(255,107,53,.25);}
-.fact-ic{font-size:1.3rem;flex-shrink:0;}
-.fact-t{font-size:.88rem;font-weight:600;color:#1a1a2e;margin-bottom:.2rem;}
-.fact-b{font-size:.8rem;color:var(--muted);line-height:1.5;}
-
-/* divider */
-hr.div{border:none;border-top:1px solid var(--line);margin:0;}
-
-/* ── GITHUB PROJECTS ── */
-.gh-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem;}
-.gh-status{font-family:'Plus Jakarta Sans',sans-serif;font-size:.7rem;color:var(--muted);display:flex;align-items:center;gap:.5rem;}
-.gh-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);}
-.gh-dot.loading{background:var(--orange);animation:blink 1s infinite;}
-.gh-dot.error{background:#f44;}
-
-/* pinned featured project */
-.pinned-card{background:#ffffff;border:1px solid rgba(0,0,0,0.09);border-radius:16px;padding:2.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;transition:border-color .3s;box-shadow:0 4px 20px rgba(0,0,0,0.07);}
-.pinned-card:hover{border-color:rgba(255,107,53,.3);}
-.pinned-card::before{content:'FEATURED';position:absolute;top:1.5rem;right:1.5rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:.62rem;letter-spacing:.2em;color:var(--orange);background:rgba(255,107,53,.09);border:1px solid rgba(255,107,53,.2);padding:.25rem .7rem;border-radius:4px;}
-.pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;}
-.pc-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:.68rem;color:var(--teal);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.9rem;}
-.pc-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.9rem;font-style:normal;color:#1a1a2e;letter-spacing:-.02em;margin-bottom:.9rem;line-height:1.15;}
-.pc-desc{font-size:.9rem;color:var(--muted);line-height:1.75;margin-bottom:1.3rem;}
-.pc-impacts{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.8rem;}
-.pc-impact{font-size:.84rem;color:#555;display:flex;align-items:center;gap:.6rem;}
-.pc-impact::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;}
-.pc-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.8rem;}
-.pct{background:rgba(91,156,246,.08);border:1px solid rgba(91,156,246,.15);color:var(--blue);padding:.22rem .7rem;border-radius:4px;font-size:.7rem;font-family:'Plus Jakarta Sans',sans-serif;}
-.pc-links{display:flex;gap:.7rem;}
-.pcl{display:inline-flex;align-items:center;gap:.4rem;color:#fff;text-decoration:none;font-size:.8rem;font-weight:600;border:1px solid var(--line);padding:.55rem 1.1rem;border-radius:7px;transition:all .2s;}
-.pcl:hover{border-color:var(--orange);color:var(--orange);}
-.pcl.prim{background:var(--orange);border-color:var(--orange);}
-.pcl.prim:hover{background:var(--orange2);border-color:var(--orange2);}
-
-/* mock dashboard inside pinned */
-.mock{background:#1a1a2e;border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:1.3rem;height:260px;display:flex;flex-direction:column;gap:.9rem;position:relative;overflow:hidden;}
-.mock::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--orange),var(--teal));}
-.mock-bar{display:flex;gap:.35rem;}
-.md{width:9px;height:9px;border-radius:50%;}
-.mock-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;}
-.ms{background:var(--surface2);border-radius:7px;padding:.6rem;text-align:center;}
-.msn{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;font-style:italic;color:var(--orange);}
-.msl{font-size:.58rem;color:var(--dim);font-family:'Plus Jakarta Sans',sans-serif;margin-top:.2rem;}
-.mock-chart{display:flex;align-items:flex-end;gap:.35rem;height:55px;margin-top:.3rem;}
-.mc{background:linear-gradient(to top,var(--orange),rgba(255,107,53,.25));border-radius:3px 3px 0 0;flex:1;transition:height .4s ease;}
-
-/* github repo grid */
-.repo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;}
-.rcard{background:#ffffff;padding:1.8rem;display:flex;flex-direction:column;transition:background .2s;position:relative;}
-.rcard:hover{background:#f8f9fa;}
-.rcard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.8rem;}
-.rcard-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;font-style:normal;color:#fff;margin-bottom:.5rem;line-height:1.2;word-break:break-word;}
-.rcard-name a{color:#1a1a2e;text-decoration:none;transition:color .2s;}
-.rcard-name a:hover{color:var(--orange);}
-.rcard-desc{font-size:.8rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:1.1rem;}
-.rcard-no-desc{font-size:.78rem;color:var(--dim);font-style:italic;flex:1;margin-bottom:1.1rem;}
-.rcard-footer{display:flex;justify-content:space-between;align-items:center;margin-top:auto;}
-.rcard-lang{display:flex;align-items:center;gap:.4rem;font-size:.7rem;color:var(--muted);font-family:'Plus Jakarta Sans',sans-serif;}
-.lang-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
-.rcard-meta{display:flex;gap:.9rem;}
-.rmeta{font-size:.7rem;color:var(--dim);display:flex;align-items:center;gap:.3rem;}
-.rcard-fork{font-family:'Plus Jakarta Sans',sans-serif;font-size:.6rem;color:var(--dim);background:var(--surface2);border:1px solid var(--line);padding:.15rem .5rem;border-radius:3px;}
-.rcard-updated{font-size:.68rem;color:var(--dim);font-family:'Plus Jakarta Sans',sans-serif;margin-top:.6rem;}
-
-/* loading / error states */
-.repo-loading{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;}
-.skeleton{background:var(--bg2);padding:1.8rem;height:180px;position:relative;overflow:hidden;}
-.skeleton::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 20%,rgba(255,255,255,.03) 50%,transparent 80%);animation:shimmer 1.6s infinite;}
-@keyframes shimmer{from{transform:translateX(-100%);}to{transform:translateX(100%);}}
-.gh-error{background:var(--surface);border:1px solid rgba(244,68,68,.2);border-radius:12px;padding:2rem;text-align:center;color:var(--muted);font-size:.9rem;}
-.gh-note{margin-top:1.5rem;background:rgba(255,107,53,.06);border:1px solid rgba(255,107,53,.15);border-radius:10px;padding:1rem 1.3rem;font-size:.8rem;color:var(--muted);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.7;}
-.gh-note strong{color:var(--orange);}
-
-/* experience */
-.exp-list{display:flex;flex-direction:column;}
-.erow{display:grid;grid-template-columns:190px 1fr;gap:3.5rem;padding:2.8rem 0;border-top:1px solid var(--line);opacity:1;transform:translateY(0);}
-.erow.in{opacity:1;transform:translateY(0);}
-.edate{font-family:'Plus Jakarta Sans',sans-serif;font-size:.69rem;color:var(--teal);letter-spacing:.05em;margin-bottom:.5rem;}
-.eco{font-size:.83rem;font-weight:600;color:var(--muted);}
-.ebadge{display:inline-block;margin-top:.6rem;background:var(--surface2);border:1px solid var(--line);padding:.18rem .6rem;border-radius:3px;font-size:.66rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);}
-.erole{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.55rem;font-style:normal;color:#1a1a2e;margin-bottom:1.1rem;letter-spacing:-.02em;line-height:1.2;}
-.eul{list-style:none;display:flex;flex-direction:column;gap:.45rem;}
-.eul li{font-size:.87rem;color:#555;line-height:1.7;padding-left:1.2rem;position:relative;}
-.eul li::before{content:'→';position:absolute;left:0;color:var(--orange);font-size:.78rem;}
-.ekpis{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.1rem;}
-.kpi{background:rgba(0,201,167,.07);border:1px solid rgba(0,201,167,.15);color:var(--teal);padding:.25rem .8rem;border-radius:4px;font-size:.71rem;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;}
-
-/* skills */
-.sk-layout{display:grid;grid-template-columns:1fr 1.7fr;gap:4.5rem;align-items:start;}
-.sk-note{font-size:.93rem;color:var(--muted);line-height:1.85;}
-.sk-note strong{color:#fff;}
-.sk-rows{display:flex;flex-direction:column;gap:1rem;}
-.skrow{border-top:1px solid var(--line);padding-top:1.1rem;}
-.skl{font-family:'Plus Jakarta Sans',sans-serif;font-size:.66rem;color:var(--orange);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.7rem;}
-.sktags{display:flex;flex-wrap:wrap;gap:.35rem;}
-.st{background:#f1f3f5;border:1px solid rgba(0,0,0,0.1);color:#444;padding:.26rem .72rem;border-radius:4px;font-size:.76rem;transition:all .2s;cursor:default;}
-.st:hover{background:var(--surface);border-color:rgba(255,107,53,.3);color:var(--orange);}
-.st.core{background:rgba(255,107,53,.07);border-color:rgba(255,107,53,.2);color:var(--orange2);}
-
-/* education */
-.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;margin-bottom:2.5rem;}
-.edc{background:#ffffff;border:1px solid rgba(0,0,0,0.09);border-radius:13px;padding:1.9rem;transition:all .3s;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.05);}
-.edc::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--orange),var(--orange2));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
-.edc:hover::after{transform:scaleX(1);}
-.edc:hover{transform:translateY(-3px);}
-.edicon{font-size:1.9rem;margin-bottom:.9rem;}
-.eddeg{font-family:'Plus Jakarta Sans',sans-serif;font-style:italic;font-size:1.15rem;color:#1a1a2e;margin-bottom:.35rem;line-height:1.3;}
-.edsch{font-size:.83rem;color:var(--muted);margin-bottom:.9rem;}
-.edchips{display:flex;gap:.4rem;flex-wrap:wrap;}
-.edchip{background:var(--surface2);border:1px solid var(--line);padding:.18rem .65rem;border-radius:3px;font-size:.7rem;font-family:'Plus Jakarta Sans',sans-serif;color:#bbb;}
-.edchip.hot{background:rgba(255,107,53,.07);border-color:rgba(255,107,53,.22);color:var(--orange);}
-
-.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
-.certrow{display:flex;align-items:flex-start;gap:.8rem;background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:9px;padding:1rem 1.2rem;transition:all .2s;box-shadow:0 1px 6px rgba(0,0,0,0.04);}
-.certrow:hover{border-color:rgba(255,107,53,.25);transform:translateX(3px);}
-.certbullet{width:5px;height:5px;background:var(--orange);border-radius:50%;flex-shrink:0;margin-top:.5rem;}
-.certn{font-size:.82rem;font-weight:600;color:#1a1a2e;line-height:1.4;}
-.certi{font-size:.68rem;color:var(--muted);font-family:'Plus Jakarta Sans',sans-serif;margin-top:.12rem;}
-
-/* contact */
-.contact-box{background:#1a1a2e;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:4.5rem;position:relative;overflow:hidden;}
-.contact-box::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(255,107,53,.05) 0%,transparent 70%);pointer-events:none;}
-.cg{display:grid;grid-template-columns:1.1fr 1fr;gap:4.5rem;align-items:center;}
-.cheadline{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,3vw,2.8rem);font-style:normal;color:#ffffff;letter-spacing:-.025em;line-height:1.1;margin-bottom:1.1rem;}
-.csub{font-size:.92rem;color:var(--muted);line-height:1.75;margin-bottom:1.8rem;}
-.cemail{font-family:'Plus Jakarta Sans',sans-serif;font-style:italic;font-size:1.2rem;color:var(--orange);text-decoration:none;display:block;margin-bottom:2rem;transition:color .2s;}
-.cemail:hover{color:var(--orange2);}
-.clinks{display:flex;gap:.7rem;flex-wrap:wrap;}
-.cl{display:inline-flex;align-items:center;gap:.45rem;background:var(--surface2);border:1px solid var(--line);color:var(--text);padding:.7rem 1.4rem;border-radius:7px;text-decoration:none;font-size:.8rem;font-weight:600;transition:all .2s;}
-.cl:hover{border-color:rgba(255,107,53,.35);color:var(--orange);}
-.cl.dl{background:var(--orange);border-color:var(--orange);color:#fff;}
-.cl.dl:hover{background:var(--orange2);border-color:var(--orange2);}
-.cfacts{display:flex;flex-direction:column;gap:.9rem;}
-.cfact{display:flex;align-items:flex-start;gap:.9rem;background:var(--bg2);border:1px solid var(--line);border-radius:9px;padding:1.1rem 1.2rem;}
-.cfic{font-size:1.2rem;flex-shrink:0;}
-.cft{font-size:.86rem;font-weight:600;color:#fff;}
-.cfb{font-size:.78rem;color:var(--muted);margin-top:.1rem;line-height:1.5;}
-
-footer{padding:1.8rem 5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(0,0,0,0.1);background:#f8f9fa;}
-.ft{font-size:.7rem;color:#888;font-family:'Plus Jakarta Sans',sans-serif;}
-
-/* language color map */
-.lc-JavaScript{background:#f1e05a;}
-.lc-TypeScript{background:#3178c6;}
-.lc-Python{background:#3572a5;}
-.lc-Java{background:#b07219;}
-.lc-HTML{background:#e34c26;}
-.lc-CSS{background:#563d7c;}
-.lc-Jupyter{background:#da5b0b;}
-.lc-default{background:#888;}
+/* FOOTER */
+footer{padding:1.5rem 5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f0;}
+.ft{font-size:.75rem;color:#bbb;}
 
 @media(max-width:900px){
   nav{padding:1rem 1.5rem;}
-  .nl{display:none;}
-  .hero{grid-template-columns:1fr;}
-  .hl,.hr{padding:8rem 1.5rem 3rem;}
-  .wrap{padding:5rem 1.5rem;}
-  .about-grid,.pc-grid,.sk-layout,.cg,.edu-grid{grid-template-columns:1fr;} .photo-frame{width:150px;height:150px;}
-  .erow{grid-template-columns:1fr;}
-  .repo-grid,.repo-loading{grid-template-columns:1fr;}
-  .cert-grid{grid-template-columns:1fr;}
-  .contact-box{padding:3rem 1.5rem;}
+  .nav-links{display:none;}
+  .hero{padding:7rem 1.5rem 4rem;}
+  section{padding:4rem 1.5rem;}
+  .about-grid,.exp-item,.skills-wrap,.contact-wrap,.edu-grid,.featured-card{grid-template-columns:1fr;}
+  .projects-grid,.cert-list{grid-template-columns:1fr;}
+  .stats-bar{grid-template-columns:1fr 1fr;padding:3rem 1.5rem;gap:2rem;}
+  .sbar-item{border-right:none;padding:0;text-align:left;}
   footer{padding:1.5rem;flex-direction:column;gap:.5rem;text-align:center;}
 }
-
-/* photo */
-.photo-wrap{display:flex;flex-direction:column;align-items:center;gap:1.5rem;}
-.photo-frame{width:200px;height:200px;border-radius:50%;overflow:hidden;border:3px solid rgba(255,107,53,.3);box-shadow:0 0 0 6px rgba(255,107,53,.08);flex-shrink:0;}
-.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center top;}
-.photo-caption{text-align:center;}
-.photo-caption .cap-name{font-family:'Plus Jakarta Sans',sans-serif;font-style:italic;font-size:1.1rem;color:#1a1a2e;margin-bottom:.2rem;}
-.photo-caption .cap-sub{font-size:.72rem;color:var(--muted);font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:.05em;}
 </style>
 </head>
 <body>
 
-
-
-<nav id="nav">
-  <div class="logo">Archana <b>K.</b></div>
-  <ul class="nl">
+<nav>
+  <a href="#" class="nav-logo">Portfolio</a>
+  <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#education">Education</a></li>
   </ul>
-  <a href="#contact" class="nhire">Hire Me →</a>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <a href="https://linkedin.com/in/archana-kanchimireddy-0116181b4/" target="_blank" style="display:flex;align-items:center;gap:.4rem;color:#666;text-decoration:none;font-size:.83rem;font-weight:500;transition:color .2s;" onmouseover="this.style.color='#c8401a'" onmouseout="this.style.color='#666'">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/archana-2813" target="_blank" style="display:flex;align-items:center;gap:.4rem;color:#666;text-decoration:none;font-size:.83rem;font-weight:500;transition:color .2s;" onmouseover="this.style.color='#c8401a'" onmouseout="this.style.color='#666'">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      GitHub
+    </a>
+    <a href="#contact" class="nav-btn">Hire Me →</a>
+  </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-glow"></div>
-  <div class="hl">
-    <div class="badge">Open to full-time roles</div>
-    <div class="pre">Software Engineer · Full-Stack · Frontend · Cloud</div>
-    <h1>Archana <em>Kanchimireddy</em><small>Tempe, Arizona · Software Engineer</small></h1>
-    <p class="hdesc">Building <strong>production-grade applications</strong> with React, Node.js & AWS — including a healthcare platform handling <strong>120K+ monthly transactions</strong>.</p>
-    <div class="hbtns">
-      <a href="Archana_Kanchimireddy_Resume_Final.pdf" download class="bp">
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Open to full-time roles · Tempe, AZ</div>
+    <h1>Hi, I'm Archana Kanchimireddy</h1>
+    <p class="hero-sub">
+      Software Engineer with <strong>2.5+ years of experience</strong> building web apps with React, Node.js, and AWS. I enjoy turning designs and ideas into real, working products that people actually use.
+    </p>
+    <div class="hero-btns">
+      <a href="Archana_Kanchimireddy_Resume_Final.pdf" download class="btn-main">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Resume
+        Download Resume
       </a>
-      <a href="#projects" class="bs">Projects ↓</a>
-      <a href="#contact" class="bs">Contact</a>
+      <a href="#projects" class="btn-out">See My Projects →</a>
+      <a href="#contact" class="btn-out">Contact Me</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">2.5<span>+</span></div><div class="stat-label">Years experience</div></div>
+      <div><div class="stat-num">4.<span>0</span></div><div class="stat-label">MS GPA at ASU</div></div>
+      <div><div class="stat-num">120<span>K+</span></div><div class="stat-label">Transactions/month</div></div>
+      <div><div class="stat-num">40<span>%</span></div><div class="stat-label">Effort saved at TCS</div></div>
     </div>
   </div>
-  <div class="hr">
-    <div class="scards">
-      <div class="sc"><div class="scn">2.5<span>+</span></div><div class="scl">years experience</div><div class="scs">TCS + internship</div></div>
-      <div class="sc"><div class="scn">4.<span>0</span></div><div class="scl">MS GPA at ASU</div><div class="scs">Arizona State</div></div>
-      <div class="sc"><div class="scn">120<span>K+</span></div><div class="scl">monthly transactions</div><div class="scs">Healthcare platform</div></div>
-      <div class="sc"><div class="scn">40<span>%</span></div><div class="scl">effort reduction</div><div class="scs">Workflow automation</div></div>
-      <div class="sc"><div class="scn">99.<span>9%</span></div><div class="scl">uptime maintained</div><div class="scs">Production system</div></div>
-      <div class="sc"><div class="scn">8</div><div class="scl">certifications</div><div class="scs">AWS · Pega · MS</div></div>
-    </div>
-  </div>
-</section>
+</div>
 
 <!-- MARQUEE -->
-<div class="mq">
-  <div class="mqi">
-    <span>React.js</span><span class="dot">✦</span><span>Node.js</span><span class="dot">✦</span><span>TypeScript</span><span class="dot">✦</span><span>AWS Cloud</span><span class="dot">✦</span><span>Full-Stack</span><span class="dot">✦</span><span>REST APIs</span><span class="dot">✦</span><span>Java</span><span class="dot">✦</span><span>PostgreSQL</span><span class="dot">✦</span><span>Agile/Scrum</span><span class="dot">✦</span><span>Figma</span><span class="dot">✦</span><span>Tailwind CSS</span><span class="dot">✦</span><span>CI/CD</span><span class="dot">✦</span><span>Healthcare</span><span class="dot">✦</span><span>Fintech</span><span class="dot">✦</span>
-    <span>React.js</span><span class="dot">✦</span><span>Node.js</span><span class="dot">✦</span><span>TypeScript</span><span class="dot">✦</span><span>AWS Cloud</span><span class="dot">✦</span><span>Full-Stack</span><span class="dot">✦</span><span>REST APIs</span><span class="dot">✦</span><span>Java</span><span class="dot">✦</span><span>PostgreSQL</span><span class="dot">✦</span><span>Agile/Scrum</span><span class="dot">✦</span><span>Figma</span><span class="dot">✦</span><span>Tailwind CSS</span><span class="dot">✦</span><span>CI/CD</span><span class="dot">✦</span><span>Healthcare</span><span class="dot">✦</span><span>Fintech</span><span class="dot">✦</span>
+<div class="marquee">
+  <div class="marquee-inner">
+    <span>React.js</span><span class="dot">✦</span><span>Node.js</span><span class="dot">✦</span><span>TypeScript</span><span class="dot">✦</span><span>JavaScript</span><span class="dot">✦</span><span>AWS</span><span class="dot">✦</span><span>REST APIs</span><span class="dot">✦</span><span>Java</span><span class="dot">✦</span><span>PostgreSQL</span><span class="dot">✦</span><span>Tailwind CSS</span><span class="dot">✦</span><span>Figma</span><span class="dot">✦</span><span>Docker</span><span class="dot">✦</span><span>Agile</span><span class="dot">✦</span>
+    <span>React.js</span><span class="dot">✦</span><span>Node.js</span><span class="dot">✦</span><span>TypeScript</span><span class="dot">✦</span><span>JavaScript</span><span class="dot">✦</span><span>AWS</span><span class="dot">✦</span><span>REST APIs</span><span class="dot">✦</span><span>Java</span><span class="dot">✦</span><span>PostgreSQL</span><span class="dot">✦</span><span>Tailwind CSS</span><span class="dot">✦</span><span>Figma</span><span class="dot">✦</span><span>Docker</span><span class="dot">✦</span><span>Agile</span><span class="dot">✦</span>
   </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="sbar-item"><div class="sbar-num">120<span>K+</span></div><div class="sbar-label">Monthly transactions on healthcare platform</div></div>
+  <div class="sbar-item"><div class="sbar-num">1,500<span>+</span></div><div class="sbar-label">Healthcare providers on platform I built</div></div>
+  <div class="sbar-item"><div class="sbar-num">40<span>%</span></div><div class="sbar-label">Reduction in manual work at TCS</div></div>
+  <div class="sbar-item"><div class="sbar-num">99.9<span>%</span></div><div class="sbar-label">Uptime on production system</div></div>
 </div>
 
 <!-- ABOUT -->
-<div id="about">
-<div class="wrap">
-  <div class="slabel">About Me</div>
-  <h2 class="stitle">The story behind the engineer</h2>
+<div id="about" style="border-top:1px solid #f0f0f0;">
+<section>
+  <div class="sec-tag">About Me</div>
+  <h2>About me</h2>
   <div class="about-grid">
-    <div class="story rv">
-      <p>I've always been drawn to <em>puzzles</em> — the kind where you don't know the answer until you break the problem apart, rearrange the pieces, and make something click. That instinct is what pulled me into software engineering.</p>
-      <p>At <strong>Tata Consultancy Services</strong>, I spent over two years building systems that real people depended on — a healthcare payments platform processing <strong>120,000+ transactions every month</strong> for 1,500+ providers. My proudest moment wasn't a flashy feature. It was redesigning manual workflows that <em>cut processing effort by 40%</em> — saving hours of real work for real people every single day.</p>
-      <p>But I wanted more. I wanted to grow beyond what a large enterprise could offer, work on harder problems, and compete at a global level. So I made the decision to move to <strong>Arizona State University</strong>, earned my MS with a <em>perfect 4.0 GPA</em>, and I'm now ready to bring that same drive to a team building something that matters.</p>
-      <p>I'm actively seeking <strong>Software Engineer, Full-Stack, or Frontend roles</strong> at companies in healthcare, fintech, big tech, or any team that cares about quality and impact.</p>
-    </div>
-    <div class="photo-wrap rv">
-      <div class="photo-frame">
-        <img src="Archana_image_jpg.jpeg" onerror="this.onerror=null;this.src='Archana_image_jpg.jpg'" alt="Archana Kanchimireddy — ASU Graduate"/>
-      </div>
-      <div class="photo-caption">
-        <div class="cap-name">Archana Kanchimireddy</div>
-        <div class="cap-sub">ASU Graduate · 4.0 GPA</div>
+    <div class="about-text">
+      <p>Hi, I'm Archana — a software engineer based in <strong>Tempe, Arizona</strong>. I enjoy building web apps, and what I like most about this job is seeing something I built actually work and be used by people.</p>
+      <p>I spent 2+ years at <strong>Tata Consultancy Services</strong> on a healthcare payments platform that processed 120,000+ transactions a month for 1,500+ providers. That's where I got comfortable working in large teams, writing production code, and caring about every small detail — because in healthcare, details matter.</p>
+      <p>I came to <strong>Arizona State University</strong> to grow beyond what I'd learned at TCS and open up bigger opportunities. I finished my MS with a 4.0 GPA. Now I'm looking for a full-time role where I can keep building, keep learning, and take on more responsibility over time.</p>
+      <p>Outside of work I'm always learning something new — a new framework, a new tool, or just reading about what other engineers are building.</p>
+      <div class="about-pills">
+        <span class="pill">Detail-oriented</span>
+        <span class="pill">Team player</span>
+        <span class="pill">Always learning</span>
+        <span class="pill">Based in Tempe, AZ</span>
+        <span class="pill">Open to work</span>
       </div>
     </div>
-    <div class="facts rv">
-      <div class="fact"><div class="fact-ic">🧩</div><div><div class="fact-t">Problem-first mindset</div><div class="fact-b">Every technical decision tied to a real user or business outcome — not just code for code's sake.</div></div></div>
-      <div class="fact"><div class="fact-ic">🏥</div><div><div class="fact-t">Healthcare & Fintech experience</div><div class="fact-b">Production work in compliance-heavy, high-availability environments handling financial transactions.</div></div></div>
-      <div class="fact"><div class="fact-ic">🎓</div><div><div class="fact-t">4.0 GPA — Arizona State University</div><div class="fact-b">MS in IT Project Management. Academic excellence alongside real-world project delivery.</div></div></div>
-      <div class="fact"><div class="fact-ic">🚀</div><div><div class="fact-t">Available from day one</div><div class="fact-b">Currently interning and actively shipping features. Not waiting to learn — already in production.</div></div></div>
-    </div>
-  </div>
-</div>
-</div>
-
-<hr class="div"/>
-
-<!-- PROJECTS — GitHub API powered -->
-<div id="projects">
-<div class="wrap">
-  <div class="gh-header rv">
-    <div>
-      <div class="slabel">Projects</div>
-      <h2 class="stitle">Live from GitHub</h2>
-      <p class="ssub" style="margin-bottom:0;">Pulled automatically from <strong style="color:#fff;">github.com/archana-2813</strong> — always up to date.</p>
-    </div>
-    <div class="gh-status"><div class="gh-dot loading" id="gh-dot"></div><span id="gh-status-text">Fetching repos…</span></div>
-  </div>
-
-  <!-- Pinned featured project (always shown) -->
-  <div class="pinned-card rv">
-    <div class="pc-grid">
-      <div>
-        <div class="pc-label">Featured · Healthcare Tech · TCS</div>
-        <div class="pc-title">CBA Smart Health — Payments Platform</div>
-        <div class="pc-desc">Production healthcare payments platform processing 120K+ monthly transactions for 1,500+ providers. I owned frontend architecture, built the component library, automated workflows, and maintained 99.9% uptime.</div>
-        <div class="pc-impacts">
-          <div class="pc-impact">15+ React.js components shipped to production</div>
-          <div class="pc-impact">~30% fewer designer-to-developer revisions</div>
-          <div class="pc-impact">40% reduction in manual processing effort</div>
-          <div class="pc-impact">99.9% uptime · 100% cross-browser compatibility</div>
-        </div>
-        <div class="pc-tags"><span class="pct">React.js</span><span class="pct">JavaScript ES6+</span><span class="pct">Node.js</span><span class="pct">Pega PRPC 8.x</span><span class="pct">REST APIs</span><span class="pct">SOAP</span></div>
-        <div class="pc-links">
-          <a href="https://www.linkedin.com/in/archana-kanchimireddy-0116181b4/" target="_blank" class="pcl prim">LinkedIn ↗</a>
-          <a href="#contact" class="pcl">Ask Me →</a>
-        </div>
+    <div class="about-photo">
+      <div class="photo-circle">
+        <img src="Archana_image_jpg.jpeg" alt="Archana Kanchimireddy"/>
       </div>
-      <div>
-        <div class="mock">
-          <div class="mock-bar"><div class="md" style="background:#ff5f57"></div><div class="md" style="background:#febc2e"></div><div class="md" style="background:#28c840"></div><span style="font-size:.6rem;color:var(--dim);margin-left:.4rem;font-family:'Plus Jakarta Sans',sans-serif;">smart-health.jsx</span></div>
-          <div class="mock-stats">
-            <div class="ms"><div class="msn">120K</div><div class="msl">Txns/mo</div></div>
-            <div class="ms"><div class="msn">1.5K</div><div class="msl">Providers</div></div>
-            <div class="ms"><div class="msn">99.9%</div><div class="msl">Uptime</div></div>
-          </div>
-          <div style="font-size:.6rem;color:var(--dim);font-family:'Plus Jakarta Sans',sans-serif;">// Transaction volume — last 7 days</div>
-          <div class="mock-chart" id="mchart"></div>
-          <div style="font-size:.62rem;color:var(--teal);font-family:'Plus Jakarta Sans',sans-serif;margin-top:.4rem;">✓ All systems operational</div>
-        </div>
-      </div>
+      <div class="photo-name">Archana Kanchimireddy</div>
+      <div class="photo-title">ASU Graduate · 4.0 GPA</div>
     </div>
   </div>
-
-  <!-- GitHub repos — dynamically loaded -->
-  <div id="repo-container">
-    <div></div>
-  </div>
-
-  
-</div>
+</section>
 </div>
 
 <hr class="div"/>
 
 <!-- EXPERIENCE -->
-<div id="experience">
-<div class="wrap">
-  <div class="slabel rv">Work History</div>
-  <h2 class="stitle rv">Where I've worked</h2>
+<section id="experience">
+  <div class="sec-tag">Work History</div>
+  <h2>Where I've worked</h2>
   <div class="exp-list">
 
-    <div class="erow">
-      <div><div class="edate">Jan 2026 — Present</div><div class="eco">Park My Ride, LLC</div><div class="ebadge">Internship</div></div>
+    <div class="exp-item">
       <div>
-        <div class="erole">Frontend Web Developer Intern</div>
-        <ul class="eul">
-          <li>Built responsive React.js interfaces consuming Node.js REST APIs for real-time data and user interactions</li>
-          <li>Created WordPress pages via Elementor — conversion-focused, responsive layouts</li>
-          <li>Translated Figma designs to pixel-perfect pages, delivering 6 features across 2 active sprints</li>
-          <li>Developed and maintained 5+ Node.js backend API endpoints with dynamic features and animations</li>
-          <li>Performed pre-release QA — identifying and resolving integration and UI bugs before sprint close</li>
-          <li>Collaborated in a 10-member Agile/Scrum team across Sprint Planning, Reviews, and Retrospectives</li>
+        <div class="exp-date">Jan 2026 — Present</div>
+        <div class="exp-company">Park My Ride, LLC</div>
+        <div class="exp-type">Internship</div>
+      </div>
+      <div>
+        <div class="exp-role">Frontend Web Developer Intern</div>
+        <ul class="exp-bullets">
+          <li>Building React.js pages that connect to Node.js APIs for real-time data</li>
+          <li>Taking Figma designs and turning them into working, responsive pages — 6 features shipped across 2 sprints</li>
+          <li>Built 5+ backend API endpoints and ran QA checks before each release</li>
+          <li>Handling WordPress and Elementor pages for the marketing side of the product</li>
+          <li>Part of a 10-person team — daily standups, sprint reviews, the full Agile process</li>
         </ul>
-        <div class="ekpis"><span class="kpi">6 features · 2 sprints</span><span class="kpi">5+ API endpoints</span><span class="kpi">10-member team</span></div>
+        <div class="exp-tags"><span class="exp-tag">React.js</span><span class="exp-tag">Node.js</span><span class="exp-tag">WordPress</span><span class="exp-tag">Figma</span><span class="exp-tag">Agile</span></div>
       </div>
     </div>
 
-    <div class="erow">
-      <div><div class="edate">Jul 2022 — Dec 2023</div><div class="eco">Tata Consultancy Services</div><div class="ebadge">Full-Time</div></div>
+    <div class="exp-item">
       <div>
-        <div class="erole">Frontend / Full-Stack Developer</div>
-        <ul class="eul">
-          <li>Designed and delivered 15+ responsive React.js UI components for a healthcare payments platform serving 1,500+ providers</li>
-          <li>Reduced designer-to-developer revisions by ~30% through pixel-perfect JavaScript ES6+ implementation</li>
-          <li>Implemented secure auth flows compliant with healthcare data protection standards</li>
-          <li>Improved SEO and Core Web Vitals via optimized rendering, lazy loading, and accessibility enhancements</li>
-          <li>Ensured 100% cross-browser compatibility across desktop, tablet, and mobile</li>
+        <div class="exp-date">Jul 2022 — Dec 2023</div>
+        <div class="exp-company">Tata Consultancy Services</div>
+        <div class="exp-type">Full-Time</div>
+      </div>
+      <div>
+        <div class="exp-role">Frontend / Full-Stack Developer</div>
+        <ul class="exp-bullets">
+          <li>Built and shipped 15+ React.js components for a platform serving 1,500+ healthcare providers</li>
+          <li>Wrote cleaner code that cut revision cycles with designers by around 30%</li>
+          <li>Sped up page load times using code splitting, memoization, and smarter state management</li>
+          <li>Added login and auth that met healthcare data compliance requirements</li>
+          <li>Tested across all major browsers and devices — no UI issues in production</li>
         </ul>
-        <div class="ekpis"><span class="kpi">15+ React components</span><span class="kpi">~30% fewer revisions</span><span class="kpi">1,500+ providers</span></div>
+        <div class="exp-tags"><span class="exp-tag">React.js</span><span class="exp-tag">JavaScript ES6+</span><span class="exp-tag">Node.js</span><span class="exp-tag">REST APIs</span><span class="exp-tag">Git</span></div>
       </div>
     </div>
 
-    <div class="erow">
-      <div><div class="edate">Nov 2021 — Jun 2022</div><div class="eco">Tata Consultancy Services</div><div class="ebadge">Full-Time</div></div>
+    <div class="exp-item">
       <div>
-        <div class="erole">Pega Backend Developer</div>
-        <ul class="eul">
-          <li>Built Pega PRPC 8.x workflows processing 120K+ monthly transactions for 1,500+ providers</li>
-          <li>Designed Case Management for provider onboarding and payment reconciliation — cutting manual effort by 40%</li>
-          <li>Implemented REST/SOAP integrations with external systems ensuring regulatory compliance</li>
-          <li>Created real-time payment dashboards using Pega Sections, Harnesses, and Report Definitions</li>
-          <li>Optimized rules and caching contributing to 99.9% application uptime</li>
+        <div class="exp-date">Nov 2021 — Jun 2022</div>
+        <div class="exp-company">Tata Consultancy Services</div>
+        <div class="exp-type">Full-Time</div>
+      </div>
+      <div>
+        <div class="exp-role">Pega Backend Developer</div>
+        <ul class="exp-bullets">
+          <li>Worked on a Pega PRPC 8.x system that processed 120,000+ transactions a month</li>
+          <li>Built onboarding and payment workflows that saved the team 40% of their manual work</li>
+          <li>Integrated the platform with outside systems using REST and SOAP APIs</li>
+          <li>Tuned backend performance through caching and rule refactoring</li>
+          <li>Contributed to keeping the system at 99.9% uptime — it ran around the clock</li>
         </ul>
-        <div class="ekpis"><span class="kpi">120K+ monthly txns</span><span class="kpi">40% effort cut</span><span class="kpi">99.9% uptime</span></div>
+        <div class="exp-tags"><span class="exp-tag">Pega PRPC 8.x</span><span class="exp-tag">REST APIs</span><span class="exp-tag">SOAP</span><span class="exp-tag">Java</span></div>
       </div>
     </div>
 
   </div>
-</div>
-</div>
+</section>
+
+<hr class="div"/>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-tag">Projects</div>
+  <h2>Things I've built</h2>
+  <p class="sec-intro">Some of what I've worked on — from production systems at TCS to projects I built during my MS at ASU.</p>
+
+  <div class="featured-card">
+    <div>
+      <div class="fc-label">Biggest project · TCS</div>
+      <div class="fc-title">CBA Smart Health — Payments Platform</div>
+      <div class="fc-desc">This was my main project at TCS — a healthcare payments platform used by over 1,500 providers, processing 120,000+ transactions every month. I worked on the frontend, built reusable components, and helped make sure the system stayed reliable every single day.</div>
+      <ul class="fc-points">
+        <li>Shipped 15+ React.js components used in production</li>
+        <li>Reduced back-and-forth with designers by ~30% through cleaner implementation</li>
+        <li>Automated manual workflows that cut processing effort by 40%</li>
+        <li>Helped keep the system at 99.9% uptime — this ran every single day</li>
+      </ul>
+      <div class="fc-techs"><span class="fc-tech">React.js</span><span class="fc-tech">Node.js</span><span class="fc-tech">Pega PRPC</span><span class="fc-tech">REST APIs</span><span class="fc-tech">SOAP</span></div>
+      <div class="fc-btns">
+        <a href="https://linkedin.com/in/archana-kanchimireddy-0116181b4/" target="_blank" class="fc-btn primary">LinkedIn ↗</a>
+        <a href="#contact" class="fc-btn ghost">Ask me about it</a>
+      </div>
+    </div>
+    <div>
+      <div class="fc-visual">
+        <div class="fv-dots"><div class="fv-dot" style="background:#ff5f57"></div><div class="fv-dot" style="background:#febc2e"></div><div class="fv-dot" style="background:#28c840"></div></div>
+        <div class="fv-stats">
+          <div class="fv-stat"><div class="fv-stat-n">120K</div><div class="fv-stat-l">Txns/mo</div></div>
+          <div class="fv-stat"><div class="fv-stat-n">1.5K</div><div class="fv-stat-l">Providers</div></div>
+          <div class="fv-stat"><div class="fv-stat-n">99.9%</div><div class="fv-stat-l">Uptime</div></div>
+        </div>
+        <div style="font-size:.62rem;color:rgba(255,255,255,.25);margin-top:.3rem;">Transaction volume — last 7 days</div>
+        <div class="fv-bars" id="fvbars"></div>
+        <div class="fv-status">✓ All systems operational</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+    <div class="pcard"><div class="pcard-num">01 — 2025</div><div class="pcard-name">AWS Secure Cloud Architecture</div><div class="pcard-desc">Designed and deployed a full AWS setup from scratch — VPC spanning two availability zones, a load balancer, auto scaling, and Secrets Manager to store database credentials securely.</div><div class="pcard-metric">Multi-AZ · Production-grade</div><div class="pcard-bottom"><span class="pcard-lang">AWS</span><a href="https://github.com/archana-2813" target="_blank" class="pcard-link">GitHub ↗</a></div></div>
+    <div class="pcard"><div class="pcard-num">02 — Fall 2024</div><div class="pcard-name">Book Recommendation System</div><div class="pcard-desc">Built a book recommendation engine that uses collaborative filtering to suggest titles based on user ratings. Used sparse matrix format to cut memory usage by 30%.</div><div class="pcard-metric">↓ 30% memory usage</div><div class="pcard-bottom"><span class="pcard-lang">Python · ML</span><a href="https://github.com/archana-2813/Book-Recommendation-System" target="_blank" class="pcard-link">GitHub ↗</a></div></div>
+    <div class="pcard"><div class="pcard-num">03 — Fall 2024</div><div class="pcard-name">Crime Data Visualization</div><div class="pcard-desc">Created 10 Tableau dashboards with filters and controls so non-technical stakeholders could explore and understand crime data on their own.</div><div class="pcard-metric">↑ 20% data accessibility</div><div class="pcard-bottom"><span class="pcard-lang">Tableau · Python</span><a href="https://github.com/archana-2813" target="_blank" class="pcard-link">GitHub ↗</a></div></div>
+    <div class="pcard"><div class="pcard-num">04 — Fall 2024</div><div class="pcard-name">Pet Adoption SQL System</div><div class="pcard-desc">Built a normalized database with 7 related tables in SQL Server. Added stored procedures and views that cut query processing time by 30%.</div><div class="pcard-metric">↓ 30% processing time</div><div class="pcard-bottom"><span class="pcard-lang">SQL Server</span><a href="https://github.com/archana-2813" target="_blank" class="pcard-link">GitHub ↗</a></div></div>
+    <div class="pcard"><div class="pcard-num">05 — Academic</div><div class="pcard-name">Privacy-Aware Data Storage</div><div class="pcard-desc">Built an access control system that uses machine learning to automatically decide if user data can be shared with a third party. Covered with unit, integration, and UAT tests.</div><div class="pcard-metric">Ensemble ML · Tested</div><div class="pcard-bottom"><span class="pcard-lang">Java · MySQL · ML</span><a href="https://github.com/archana-2813" target="_blank" class="pcard-link">GitHub ↗</a></div></div>
+    <div class="pcard"><div class="pcard-num">06 — Research</div><div class="pcard-name">Data Privacy in Healthcare</div><div class="pcard-desc">Wrote a research paper exploring how blockchain can protect patient data in healthcare — looking at real-world challenges and what compliance actually requires.</div><div class="pcard-metric">Research Paper</div><div class="pcard-bottom"><span class="pcard-lang">Python · Blockchain</span><a href="https://github.com/archana-2813/Data-Privacy-in-Healthcare" target="_blank" class="pcard-link">GitHub ↗</a></div></div>
+  </div>
+</section>
 
 <hr class="div"/>
 
 <!-- SKILLS -->
-<div id="skills">
-<div class="wrap">
-  <div class="slabel rv">Technical Skills</div>
-  <h2 class="stitle rv">What I build with</h2>
-  <div class="sk-layout">
-    <div class="sk-note rv">
-      <p style="margin-bottom:1rem;">Core stack: <strong>React + Node.js + TypeScript</strong> for full-stack, <strong>AWS</strong> for cloud infrastructure.</p>
-      <p style="margin-bottom:1rem;">Healthcare experience means security, accessibility, and code quality are non-negotiable — not afterthoughts.</p>
-      <p>Highlighted = strongest, most production-used.</p>
+<section id="skills">
+  <div class="sec-tag">Skills</div>
+  <h2>What I work with</h2>
+  <div class="skills-wrap">
+    <div class="skills-intro">
+      <p>Day to day I work mostly with <strong>React, Node.js, and TypeScript</strong>. I've used AWS on real infrastructure projects and Java for backend work at TCS.</p>
+      <br/>
+      <p>The highlighted ones are what I'm most comfortable with and use regularly.</p>
     </div>
-    <div class="sk-rows rv">
-      <div class="skrow"><div class="skl">Frontend</div><div class="sktags"><span class="st core">React.js</span><span class="st core">JS ES6+</span><span class="st core">TypeScript</span><span class="st">HTML5</span><span class="st">CSS3</span><span class="st">Tailwind CSS</span><span class="st">Responsive Design</span><span class="st">UI/UX</span><span class="st">Accessibility</span><span class="st">SEO</span><span class="st">WordPress</span><span class="st">Elementor</span></div></div>
-      <div class="skrow"><div class="skl">Backend</div><div class="sktags"><span class="st core">Node.js</span><span class="st core">Express.js</span><span class="st">Java</span><span class="st">REST APIs</span><span class="st">GraphQL</span><span class="st">SOAP</span><span class="st">Pega PRPC 8.x</span></div></div>
-      <div class="skrow"><div class="skl">Cloud & DevOps</div><div class="sktags"><span class="st core">AWS</span><span class="st">EC2</span><span class="st">VPC</span><span class="st">RDS</span><span class="st">ALB</span><span class="st">Auto Scaling</span><span class="st">Secrets Manager</span><span class="st">GCP</span><span class="st">Git</span><span class="st">CI/CD</span><span class="st">Docker</span></div></div>
-      <div class="skrow"><div class="skl">Databases</div><div class="sktags"><span class="st">MySQL</span><span class="st">PostgreSQL</span><span class="st">SQL Server</span><span class="st">Doctrine ORM</span><span class="st">Query Optimization</span></div></div>
-      <div class="skrow"><div class="skl">Tools & Data</div><div class="sktags"><span class="st">Jira</span><span class="st">Figma</span><span class="st">Docker</span><span class="st">Agile/Scrum</span><span class="st">Unit Testing</span><span class="st">Code Reviews</span><span class="st">Tableau</span><span class="st">Power BI</span><span class="st">Python</span><span class="st">Pandas</span><span class="st">NumPy</span></div></div>
+    <div class="skill-rows">
+      <div class="skill-row"><div class="skill-cat">Frontend</div><div class="skill-tags"><span class="stag key">React.js</span><span class="stag key">JavaScript ES6+</span><span class="stag key">TypeScript</span><span class="stag">HTML5</span><span class="stag">CSS3</span><span class="stag">Tailwind CSS</span><span class="stag">Responsive Design</span><span class="stag">Accessibility</span><span class="stag">SEO</span></div></div>
+      <div class="skill-row"><div class="skill-cat">Backend</div><div class="skill-tags"><span class="stag key">Node.js</span><span class="stag key">Express.js</span><span class="stag">Java</span><span class="stag">REST APIs</span><span class="stag">GraphQL</span><span class="stag">SOAP</span><span class="stag">Pega PRPC 8.x</span></div></div>
+      <div class="skill-row"><div class="skill-cat">Cloud</div><div class="skill-tags"><span class="stag key">AWS</span><span class="stag">EC2</span><span class="stag">VPC</span><span class="stag">RDS</span><span class="stag">ALB</span><span class="stag">Auto Scaling</span><span class="stag">GCP</span><span class="stag">Docker</span><span class="stag">CI/CD</span></div></div>
+      <div class="skill-row"><div class="skill-cat">Databases</div><div class="skill-tags"><span class="stag">MySQL</span><span class="stag">PostgreSQL</span><span class="stag">SQL Server</span><span class="stag">Doctrine ORM</span></div></div>
+      <div class="skill-row"><div class="skill-cat">Tools</div><div class="skill-tags"><span class="stag">Git</span><span class="stag">Jira</span><span class="stag">Figma</span><span class="stag">Agile/Scrum</span><span class="stag">Unit Testing</span><span class="stag">Tableau</span><span class="stag">Power BI</span><span class="stag">Python</span></div></div>
     </div>
   </div>
-</div>
-</div>
+</section>
 
 <hr class="div"/>
 
-<!-- EDUCATION & CERTS -->
-<div id="education">
-<div class="wrap">
-  <div class="slabel rv">Credentials</div>
-  <h2 class="stitle rv">Education & Certifications</h2>
-  <div class="edu-grid rv">
-    <div class="edc"><div class="edicon">🎓</div><div class="eddeg">MS in Information Technology Project Management</div><div class="edsch">Arizona State University · Tempe, AZ</div><div class="edchips"><span class="edchip hot">GPA 4.0 / 4.0</span><span class="edchip">Jan 2024 – Dec 2025</span></div></div>
-    <div class="edc"><div class="edicon">🏛️</div><div class="eddeg">B.Tech in Computer Science Engineering</div><div class="edsch">Narsimha Reddy Engineering College · Hyderabad, India</div><div class="edchips"><span class="edchip hot">GPA 3.8 / 4.0</span><span class="edchip">Aug 2017 – May 2021</span></div></div>
+<!-- EDUCATION -->
+<section id="education">
+  <div class="sec-tag">Education & Certifications</div>
+  <h2>Academic background</h2>
+  <div class="edu-grid">
+    <div class="edu-card"><div class="edu-icon">🎓</div><div class="edu-deg">MS in Information Technology Project Management</div><div class="edu-school">Arizona State University · Tempe, AZ</div><div class="edu-chips"><span class="edu-chip hot">GPA 4.0 / 4.0</span><span class="edu-chip">Jan 2024 – Dec 2025</span></div></div>
+    <div class="edu-card"><div class="edu-icon">🏛️</div><div class="edu-deg">B.Tech in Computer Science Engineering</div><div class="edu-school">Narsimha Reddy Engineering College · Hyderabad, India</div><div class="edu-chips"><span class="edu-chip hot">GPA 3.8 / 4.0</span><span class="edu-chip">Aug 2017 – May 2021</span></div></div>
   </div>
-  <div class="slabel rv" style="margin-bottom:1.3rem;">8 Certifications</div>
-  <div class="cert-grid rv">
-    <div class="certrow"><div class="certbullet"></div><div><div class="certn">Pega Certified System Architect (CSA) 8.6</div><div class="certi">Pega</div></div></div>
-    <div class="certrow"><div class="certbullet"></div><div><div class="certn">Pega Certified Senior System Architect (CSSA) 8.6</div><div class="certi">Pega</div></div></div>
-    <div class="certrow"><div class="certbullet"></div><div><div class="certn">AWS Academy — Cloud Architecting</div><div class="certi">Amazon Web Services</div></div></div>
-    <div class="certrow"><div class="certbullet"></div><div><div class="certn">AWS Academy — Machine Learning for NLP</div><div class="certi">Amazon Web Services</div></div></div>
-    <div class="certrow"><div class="certbullet"></div><div><div class="certn">Developing ML Solutions & Fundamentals of ML and AI</div><div class="certi">Amazon Web Services</div></div></div>
-    <div class="certrow"><div class="certbullet"></div><div><div class="certn">Security, Compliance & Governance for AI Solutions</div><div class="certi">Amazon Web Services</div></div></div>
-    <div class="certrow"><div class="certbullet"></div><div><div class="certn">Career Essentials in Cybersecurity</div><div class="certi">Microsoft & LinkedIn</div></div></div>
-    <div class="certrow"><div class="certbullet"></div><div><div class="certn">Full Stack Java Development Program</div><div class="certi">Industry Certification</div></div></div>
+  <div class="certs-title">Certifications</div>
+  <div class="cert-list">
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Pega Certified System Architect (CSA) 8.6</div><div class="cert-by">Pega</div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Pega Certified Senior System Architect (CSSA) 8.6</div><div class="cert-by">Pega</div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">AWS Academy — Cloud Architecting</div><div class="cert-by">Amazon Web Services</div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">AWS Academy — Machine Learning for NLP</div><div class="cert-by">Amazon Web Services</div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Developing ML Solutions & Fundamentals of ML and AI</div><div class="cert-by">Amazon Web Services</div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Security, Compliance & Governance for AI Solutions</div><div class="cert-by">Amazon Web Services</div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Career Essentials in Cybersecurity</div><div class="cert-by">Microsoft & LinkedIn</div></div></div>
+    <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Full Stack Java Development Program</div><div class="cert-by">Industry Certification</div></div></div>
   </div>
-</div>
-</div>
+</section>
 
 <hr class="div"/>
 
 <!-- CONTACT -->
-<div id="contact">
-<div class="wrap">
-  <div class="contact-box rv">
-    <div class="cg">
-      <div>
-        <div class="slabel" style="margin-bottom:1.3rem;">Let's talk</div>
-        <div class="cheadline">Ready to build something great together?</div>
-        <p class="csub">Actively seeking full-time <strong style="color:#fff;">Software Engineer, Full-Stack, or Frontend roles</strong> — healthcare, fintech, big tech, or any team that ships quality software.</p>
-        <a href="/cdn-cgi/l/email-protection#a0cbc1cec3c8c9cdd2c5c4c4d98ec1d2c3c8c1cec1e0c7cdc1c9cc8ec3cfcd" class="cemail"><span class="__cf_email__" data-cfemail="bbd0dad5d8d3d2d6c9dedfdfc295dac9d8d3dad5dafbdcd6dad2d795d8d4d6">[email&#160;protected]</span></a>
-        <div class="clinks">
-          <a href="Archana_Kanchimireddy_Resume_Final.pdf" download class="cl dl">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Resume PDF
-          </a>
-          <a href="https://linkedin.com/in/archana-kanchimireddy-0116181b4/" target="_blank" class="cl">LinkedIn ↗</a>
-          <a href="https://github.com/archana-2813" target="_blank" class="cl">GitHub ↗</a>
-          <a href="tel:6232758490" class="cl">📞 (623) 275-8490</a>
-        </div>
-      </div>
-      <div class="cfacts">
-        <div class="cfact"><div class="cfic">⚡</div><div><div class="cft">Available immediately</div><div class="cfb">Currently interning. Can start full-time with standard notice.</div></div></div>
-        <div class="cfact"><div class="cfic">📍</div><div><div class="cft">Tempe, Arizona</div><div class="cfb">Open to onsite (AZ/US), hybrid, or remote. Authorized to work in the US.</div></div></div>
-        <div class="cfact"><div class="cfic">🏥</div><div><div class="cft">Healthcare & Fintech ready</div><div class="cfb">Production experience in compliance-heavy, high-availability environments.</div></div></div>
-        <div class="cfact"><div class="cfic">🎯</div><div><div class="cft">Open to: SE · Full-Stack · Frontend</div><div class="cfb">Strong in React frontend, equally capable full-stack or in cloud infra.</div></div></div>
+<section id="contact">
+  <div class="contact-wrap">
+    <div>
+      <div class="contact-tag">Let's connect</div>
+      <div class="contact-h">Open to full-time roles</div>
+      <p class="contact-p">I'm looking for a full-time Software Engineer, Full-Stack, or Frontend role. If your team is working on something interesting, I'd genuinely love to hear about it.</p>
+      <a href="/cdn-cgi/l/email-protection#482329262b2021253a2d2c2c3166293a2b20292629082f25292124662b2725" class="contact-email"><span class="__cf_email__" data-cfemail="0c676d626f6465617e69686875226d7e6f646d626d4c6b616d6560226f6361">[email&#160;protected]</span></a>
+      <div class="contact-btns">
+        <a href="Archana_Kanchimireddy_Resume_Final.pdf" download class="cbtn main">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Resume
+        </a>
+        <a href="https://linkedin.com/in/archana-kanchimireddy-0116181b4/" target="_blank" class="cbtn ghost">LinkedIn ↗</a>
+        <a href="https://github.com/archana-2813" target="_blank" class="cbtn ghost">GitHub ↗</a>
+        <a href="tel:6232758490" class="cbtn ghost">(623) 275-8490</a>
       </div>
     </div>
+    <div class="contact-facts">
+      <div class="cfact"><div class="cfact-ic">📍</div><div><div class="cfact-t">Tempe, Arizona</div><div class="cfact-b">Comfortable with onsite, hybrid, or fully remote. Authorized to work in the US.</div></div></div>
+      <div class="cfact"><div class="cfact-ic">⚡</div><div><div class="cfact-t">Available now</div><div class="cfact-b">Currently in an internship and actively interviewing. Available with standard notice.</div></div></div>
+      <div class="cfact"><div class="cfact-ic">🎯</div><div><div class="cfact-t">Looking for: SE · Full-Stack · Frontend</div><div class="cfact-b">Healthcare, fintech, startups, big tech — the team and the work matter more than the industry.</div></div></div>
+    </div>
   </div>
-</div>
-</div>
+</section>
 
 <footer>
   <div class="ft">© 2025 Archana Kanchimireddy · Tempe, AZ</div>
@@ -553,104 +487,4 @@ footer{padding:1.8rem 5rem;display:flex;justify-content:space-between;align-item
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// cursor removed for usability
-
-// ── sticky nav
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('stuck',scrollY>60));
-
-// scroll reveals disabled for instant load
-
-// experience rows disabled
-
-// ── mock chart bars
-const bars=[50,68,42,85,61,90,74];
-const ch=document.getElementById('mchart');
-if(ch){bars.forEach(h=>{const b=document.createElement('div');b.className='mc';b.style.height='0%';ch.appendChild(b);setTimeout(()=>{b.style.height=h+'%';},300+Math.random()*500);});}
-
-// ── language color helper
-function langColor(lang){
-  const map={JavaScript:'#f1e05a',TypeScript:'#3178c6',Python:'#3572a5',Java:'#b07219',HTML:'#e34c26',CSS:'#563d7c','Jupyter Notebook':'#da5b0b'};
-  return map[lang]||'#888';
-}
-
-// ── time since helper
-function timeSince(dateStr){
-  const d=new Date(dateStr),now=new Date();
-  const diff=Math.floor((now-d)/1000);
-  if(diff<3600)return Math.floor(diff/60)+'m ago';
-  if(diff<86400)return Math.floor(diff/3600)+'h ago';
-  if(diff<2592000)return Math.floor(diff/86400)+'d ago';
-  if(diff<31536000)return Math.floor(diff/2592000)+'mo ago';
-  return Math.floor(diff/31536000)+'y ago';
-}
-
-// ── GITHUB API — fetch repos automatically
-async function loadRepos(){
-  const statusDot=document.getElementById('gh-dot');
-  const statusTxt=document.getElementById('gh-status-text');
-  const container=document.getElementById('repo-container');
-
-  try{
-    // Use GitHub public API — no auth needed for public repos
-    const res=await fetch('https://api.github.com/users/archana-2813/repos?sort=updated&per_page=12&type=public');
-
-    if(!res.ok) throw new Error('GitHub API returned '+res.status);
-
-    const repos=await res.json();
-
-    // Filter out forks, sort by updated
-    const ownRepos=repos.filter(r=>!r.fork).sort((a,b)=>new Date(b.updated_at)-new Date(a.updated_at));
-
-    statusDot.className='gh-dot';
-    statusTxt.textContent=ownRepos.length+' public repos · live';
-
-    if(ownRepos.length===0){
-      container.innerHTML='<div class="gh-error">No public repositories found.</div>';
-      return;
-    }
-
-    // Build cards
-    const grid=document.createElement('div');
-    grid.className='repo-grid';
-
-    ownRepos.forEach(repo=>{
-      const card=document.createElement('div');
-      card.className='rcard';
-
-      const langDot=repo.language?`<span class="lang-dot" style="background:${langColor(repo.language)}"></span><span>${repo.language}</span>`:'';
-      const stars=repo.stargazers_count>0?`<span class="rmeta">⭐ ${repo.stargazers_count}</span>`:'';
-      const forks=repo.forks_count>0?`<span class="rmeta">🍴 ${repo.forks_count}</span>`:'';
-      const desc=repo.description
-        ?`<div class="rcard-desc">${repo.description}</div>`
-        :`<div class="rcard-no-desc">No description yet — add one on GitHub</div>`;
-
-      card.innerHTML=`
-        <div class="rcard-top">
-          <div class="rcard-name"><a href="${repo.html_url}" target="_blank">${repo.name.replace(/-/g,' ')}</a></div>
-        </div>
-        ${desc}
-        <div class="rcard-footer">
-          <div class="rcard-lang">${langDot}</div>
-          <div class="rcard-meta">${stars}${forks}</div>
-        </div>
-        <div class="rcard-updated">Updated ${timeSince(repo.updated_at)}</div>
-      `;
-
-      // Hover link reveal
-      card.querySelector('a').addEventListener('mouseenter',()=>card.style.borderColor='rgba(255,107,53,.3)');
-      card.addEventListener('mouseleave',()=>card.style.borderColor='');
-
-      grid.appendChild(card);
-    });
-
-    container.innerHTML='';
-    container.appendChild(grid);
-
-  }catch(err){
-    statusDot.className='gh-dot error';
-    statusTxt.textContent='Could not load repos';
-    container.innerHTML=`
-      <div class="gh-error">
-        <div style="font-size:1.5rem;margin-bottom:.7rem;">⚠️</div>
-        <div style="margin-bottom:.5rem;">Couldn't fetch GitHub repos right now.</div>
-    
+const bars=[50,68,42,85,61,9
